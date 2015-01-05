@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" 
+        codebase="http://blah"
+        href="webstart.jnlp">
+    <information>
+        <title>title</title>
+        <vendor>vendor</vendor>
+    </information>
+    <resources>
+        <j2se version="1.6+"
+              href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="oors.jar" main="true" />
+    </resources>
+    <application-desc
+         name="name"
+         main-class="org.oors.ui.Oors">
+     </application-desc>
+     <update check="background"/>
+</jnlp>

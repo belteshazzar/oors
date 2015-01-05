@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project oors with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="C:/Documents and Settings/admin/Desktop/oors.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.oors.ui.Oors"/>
+            	<attribute name="SplashScreen-Image" value="java.png" />
+                <attribute name="Class-Path" value=". oors_lib/javadocking.jar oors_lib/derby.jar oors_lib/derbyclient.jar oors_lib/derbynet.jar oors_lib/derbytools.jar oors_lib/nachocalendar-0.23.jar"/>
+            </manifest>
+            <fileset dir="C:/Documents and Settings/admin/workspace/oors/" >
+               	<include name="java.png"/>
+               	<include name="ui-config.xml"/>
+                <include name="org/oors/**"/>
+            	<exclude name="**/*.java"/>
+            </fileset>
+        </jar>
+        <delete dir="C:/Documents and Settings/admin/Desktop/oors_lib"/>
+        <mkdir dir="C:/Documents and Settings/admin/Desktop/oors_lib"/>
+        <copy file="C:/Program Files/eclipse/plugins/org.apache.derby.core_10.7.1/derby.jar" todir="C:/Documents and Settings/admin/Desktop/oors_lib"/>
+        <copy file="C:/Program Files/eclipse/plugins/org.apache.derby.core_10.7.1/derbyclient.jar" todir="C:/Documents and Settings/admin/Desktop/oors_lib"/>
+        <copy file="C:/Program Files/eclipse/plugins/org.apache.derby.core_10.7.1/derbynet.jar" todir="C:/Documents and Settings/admin/Desktop/oors_lib"/>
+        <copy file="C:/Program Files/eclipse/plugins/org.apache.derby.core_10.7.1/derbytools.jar" todir="C:/Documents and Settings/admin/Desktop/oors_lib"/>
+        <copy file="C:/Documents and Settings/admin/workspace/oors/nachocalendar-0.23.jar" todir="C:/Documents and Settings/admin/Desktop/oors_lib"/>
+        <copy file="C:/Documents and Settings/admin/workspace/oors/javadocking.jar" todir="C:/Documents and Settings/admin/Desktop/oors_lib"/>
+    </target>
+</project>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oors-ui>
+	
+	<splash>
+		<image></image>
+		<width>0</width>
+		<height>0</height>
+		<message>
+			<x>0</x>
+			<y>0</y>
+			<font></font>
+			<color></color>
+			<max-length>0</max-length>
+		</message>
+	</splash>
+
+	<startup>
+		<script>scripts/startup.js</script>
+	</startup>
+	
+	<icons default="images/error.png">
+		<icon>
+			<name>cut</name>
+			<filename>images/Cut.png</filename>
+		</icon>
+		<icon>
+			<name>copy</name>
+			<filename>images/Copy.png</filename>
+		</icon>
+		<icon>
+			<name>paste</name>
+			<filename>images/Paste.png</filename>
+		</icon>
+		<icon>
+			<name>folder</name>
+			<filename>images/folder.png</filename>
+		</icon>
+		<icon>
+			<name>folderProperties</name>
+			<filename>images/folder_wrench.png</filename>
+		</icon>
+		<icon>
+			<name>newDocument</name>
+			<filename>images/page_white_add.png</filename>
+		</icon>
+		<icon>
+			<name>newFolder</name>
+			<filename>images/folder_add.png</filename>
+		</icon>
+		<icon>
+			<name>documentProperties</name>
+			<filename>images/page_white_gear.png</filename>
+		</icon>
+		<icon>
+			<name>newObject</name>
+			<filename>images/add.png</filename>
+		</icon>
+		<icon>
+			<name>open</name>
+			<filename>images/lightning.png</filename>
+		</icon>
+		<icon>
+			<name>objectProperties</name>
+			<filename>images/wrench.png</filename>
+		</icon>
+		<icon>
+			<name>projectProperties</name>
+			<filename>images/database_gear.png</filename>
+		</icon>
+		<icon>
+			<name>branchProperties</name>
+			<filename>images/arrow_divide.png</filename>
+		</icon>
+	</icons>
+
+	<actions>
+		<action>
+			<name>new folder</name>
+			<script>scripts/new_folder_action.js</script>
+		</action>
+		<action>
+			<name>new document</name>
+			<script>scripts/new_document_action.js</script>
+		</action>
+		<action>
+			<name>folder properties</name>
+			<script>scripts/folder_properties_action.js</script>
+		</action>
+		<action>
+			<name>branch properties</name>
+			<script>scripts/branch_properties_action.js</script>
+		</action>
+		<action>
+			<name>project properties</name>
+			<script>scripts/project_properties_action.js</script>
+		</action>
+		<action>
+			<name>insert after</name>
+			<script>scripts/insert_after_action.js</script>
+		</action>
+		<action>
+			<name>insert before</name>
+			<script>scripts/insert_before_action.js</script>
+		</action>
+		<action>
+			<name>new obj</name>
+			<script>scripts/new_obj_action.js</script>
+		</action>
+		<action>
+			<name>add column</name>
+			<script>scripts/add_column_action.js</script>
+		</action>
+		<action>
+			<name>remove column</name>
+			<script>scripts/remove_column_action.js</script>
+		</action>
+		<action>
+			<name>sort</name>
+			<script>scripts/sort_action.js</script>
+		</action>
+		<action>
+			<name>filter</name>
+			<script>scripts/filter_action.js</script>
+		</action>
+		<action>
+			<name>start link</name>
+			<script>scripts/start_link_action.js</script>
+		</action>
+		<action>
+			<name>create link</name>
+			<script>scripts/create_link_action.js</script>
+		</action>
+	</actions>
+	
+	
+	<menus>
+	
+		<!--   Table Header -->
+
+		<menu>
+			<ui-element>JTableHeader</ui-element>
+			<selection></selection>
+			<action>add column</action>
+			<action>remove column</action>
+			<action>sort</action>
+			<action>filter</action>
+		</menu>
+	
+
+		<!--   Project Branch Panel -->
+
+		<menu>
+			<ui-element>ProjectBranchTree</ui-element>
+			<selection>ProjectBranch</selection>
+			<action>new document</action>
+			<action>new folder</action>
+			<action>start link</action>
+			<action>create link</action>
+		</menu>
+		<menu>
+			<ui-element>ProjectBranchTree</ui-element>
+			<selection>Folder</selection>
+			<action>new document</action>
+			<action>new folder</action>
+			<action>start link</action>
+			<action>create link</action>
+		</menu>
+		<menu>
+			<ui-element>FolderTable</ui-element>
+			<selection>ProjectBranch</selection>
+			<action>new document</action>
+			<action>new folder</action>
+			<action>start link</action>
+			<action>create link</action>
+		</menu>
+		<menu>
+			<ui-element>FolderTable</ui-element>
+			<selection>Folder</selection>
+			<action>new document</action>
+			<action>new folder</action>
+			<action>start link</action>
+			<action>create link</action>
+		</menu>
+		<menu>
+			<ui-element>FolderTable</ui-element>
+			<selection>Document</selection>
+			<action>start link</action>
+			<action>create link</action>
+		</menu>
+		
+		<!--   Document Panel -->
+
+		<menu>
+			<ui-element>DocumentTree</ui-element>
+			<selection>Document</selection>
+			<action>new obj</action>
+			<action>start link</action>
+			<action>create link</action>
+		</menu>
+		<menu>
+			<ui-element>DocumentTree</ui-element>
+			<selection>Obj</selection>
+			<action>new obj</action>
+			<action>insert after</action>
+			<action>insert before</action>
+			<action>start link</action>
+			<action>create link</action>
+		</menu>
+		<menu>
+			<ui-element>DocumentTable</ui-element>
+			<selection>Obj</selection>
+			<action>new obj</action>
+			<action>insert after</action>
+			<action>insert before</action>
+			<action>start link</action>
+			<action>create link</action>
+		</menu>
+		<menu>
+			<ui-element>DocumentTable</ui-element>
+			<selection>Document</selection>
+			<action>new obj</action>
+			<action>start link</action>
+			<action>create link</action>
+		</menu>
+		
+	</menus>
+	
+	<help>help/index.html</help>
+</oors-ui>
